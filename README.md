@@ -41,7 +41,7 @@ docker run -it --rm mvngatimage java \
 -Dauth_method=POST \
 -Dauth_body='"{"username":"${custom}", "password":"${custom}"}' \
 -Dauth_query='?username=${custom}&password=${custom}' \
--Dauth_expRspCode=200 \
+-Dauth_expRspCode=500 \
 
 -Dpath="http://localhost:3001/users" \
 -Dmethod=GET \
