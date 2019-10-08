@@ -1,12 +1,17 @@
 #### Purpose
 - Modify a REST API's body and/or query with strings from the [big list of naughty strings](src/test/scala/data/NaughtyStrings.scala) and check for the expected response code. 
-- The list has over 500 strings, which can be slow, so run tests concurrently using the gatling load-test framework. 
+- The list has over 500 strings, which can be slow, so run tests concurrently using the gatling load-test framework.
+
 
 
 #### Usage
 1. [./build.sh](build.sh)  
-2. Examples in [test.sh](test.sh). Or if building code, [Config.scala](src/test/scala/config/Config.scala) is probably a good starting point.
+2. See config defaults in [Config.scala](src/test/scala/config/Config.scala)
+3. CLI examples in [test.sh](test.sh). 
 
+##### Dev/Debug
+- run [Engine.scala](src/test/scala/Engine.scala) 
+- Project layout is based off gatling's defaults 
 
 #### Examples 
 ##### 1. modifying body params
@@ -49,4 +54,17 @@ docker run -it --rm mvngatimage java \
 -Dtarget=custom \
 
 -cp target/string-tests-1.0-SNAPSHOT.jar io.gatling.app.Gatling -s config.testSim
+```
+
+##### 4. modifying a query with 500 concurrent "users"
+```
+docker run -it --rm mvngatimage java \
+
+-Dpath="http://localhost:3001/users" \
+-Dmethod=GET \
+-Dquery='?name=${custom}' \
+-Dtarget=custom \
+-Dthreads=500
+
+-cp target/performance-tests-1.0-SNAPSHOT.jar io.gatling.app.Gatling -s config.testSim
 ```
