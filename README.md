@@ -1,6 +1,6 @@
 #### Purpose
 - Modify a REST API's body and/or query with strings from the [big list of naughty strings](src/test/scala/data/NaughtyStrings.scala) and check for the expected response code. 
-- The list has over 500 strings, which can be slow, so run tests concurrently using the gatling load-test framework.
+- The list has over 1k strings, which can be slow, so run tests concurrently using the gatling load-test framework.
 
 
 
