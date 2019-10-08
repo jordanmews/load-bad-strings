@@ -28,7 +28,6 @@ RUN chown nobody:nogroup ${TESTS}
 # But, the gatling plugins assume that your simulations will run in the test directory.  This causes errors on running the engine locally.
 # I tried all sorts of their documented overrides in the pom.xml, gatling.conf and my own hackery modifying the Engine and IDEPathHelper class, but none worked.
 # Maybe I just missed something, but done with this for now.
-COPY helpers ${TESTS}/helpers
 COPY src/test ${TESTS}/src/main
 
 COPY settings.xml /usr/share/maven/ref/
