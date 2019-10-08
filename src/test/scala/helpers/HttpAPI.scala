@@ -75,7 +75,7 @@ object FeederUtil {
 
 object NaughtyStringFeeder {
   val naughtyKey = "naughtyString"
-  val feeder: Array[Map[String, Any]] = FeederUtil.mapArray(NaughtyStrings.bigListNaughtyStrings, naughtyKey)
+  val feeder: Array[Map[String, Any]] = FeederUtil.mapArray(NaughtyStrings.all, naughtyKey)
 
   def modSessionKey(key: String): ChainBuilder = {
     exec(session => session.set(key, session(naughtyKey).as[String]))
