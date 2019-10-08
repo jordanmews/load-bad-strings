@@ -27,6 +27,12 @@
 #-Dmethod=GET \
 #-Dquery='?name=${custom}' \
 #-Dtarget=custom \
+#-Dauth=true \
+#-Dauth_path="http://localhost:3001/sign-in" \
+#-Dauth_method=POST \
+#-Dauth_body='"{"username":"${custom}", "password":"${custom}"}' \
+#-Dauth_query='?username=${custom}&password=${custom}' \
+#-Dauth_expRspCode=200 \
 #-cp target/string-tests-1.0-SNAPSHOT.jar io.gatling.app.Gatling -s config.testSim
 
 
