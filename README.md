@@ -8,6 +8,7 @@
 1. [./build.sh](build.sh)  
 2. See config defaults in [Config.scala](src/test/scala/config/Config.scala)
 3. CLI examples in [test.sh](test.sh). 
+4. In the `query` or `body`, any strings surrounded by `${}` and specified as the `target` value will be replaced by a string from the big list.
 
 ##### Dev/Debug
 - run [Engine.scala](src/test/scala/Engine.scala) 
