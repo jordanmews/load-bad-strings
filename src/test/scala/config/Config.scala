@@ -37,9 +37,10 @@ object Config {
 
   // ***** Load-profile *****
   def threads: Int = getProperty("threads", "100").toInt
-  def holdDuration: Int = getProperty("holdDuration", "100").toInt
   def maxDuration: Int = getProperty("maxDuration", "300").toInt
   def rampDuration: Int = getProperty("rampDuration", "0").toInt
+  // below currently un-used
+  def holdDuration: Int = getProperty("holdDuration", "100").toInt
   def throttleRPS: Int = getProperty("throttleRPS", "100").toInt
   // ***************************************************************************
 
