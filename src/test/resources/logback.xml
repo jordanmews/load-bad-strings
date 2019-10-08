@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss} [%-5level] %logger{15} - %msg%n%rEx</pattern>
+		</encoder>
+		<immediateFlush>false</immediateFlush>
+	</appender>
+
+	<appender name="FILE" class="ch.qos.logback.core.FileAppender">
+		<file>/tmp/gatling.log</file>
+		<append>false</append>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%-5level] %logger{15} - %msg%n%rEx</pattern>
+		</encoder>
+	</appender>
+
+	<!-- Uncomment below for logging ALL HTTP request and responses -->
+<!--	<logger name="io.gatling.http.engine.response" level="TRACE" />-->
+
+	<!-- Uncomment below for logging ONLY FAILED HTTP request and responses -->
+		<logger name="io.gatling.http.engine.response" level="DEBUG" />
+
+<!--	<logger name="io.gatling.http.engine.tx" level="TRACE" />-->
+	<!--<logger name="io.gatling.http.protocol" level="TRACE" />-->
+
+	<root level="ERROR">
+		<appender-ref ref="CONSOLE" />
+	</root>
+
+	<root level="WARN">
+		<appender-ref ref="FILE" />
+    </root>
+
+</configuration>
