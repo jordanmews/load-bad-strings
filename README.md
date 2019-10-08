@@ -23,7 +23,7 @@ docker run -it --rm mvngatimage java \
 -Dbody='"{"username":"${custom}", "password":"${custom}"}' \
 -Dtarget=custom \
 
--cp target/performance-tests-1.0-SNAPSHOT.jar io.gatling.app.Gatling -s config.testSim
+-cp target/string-tests-1.0-SNAPSHOT.jar io.gatling.app.Gatling -s config.testSim
 ```
 
 ##### 2. modifying a query
@@ -35,7 +35,7 @@ docker run -it --rm mvngatimage java \
 -Dquery='?name=${custom}' \
 -Dtarget=custom \
 
--cp target/performance-tests-1.0-SNAPSHOT.jar io.gatling.app.Gatling -s config.testSim
+-cp target/string-tests-1.0-SNAPSHOT.jar io.gatling.app.Gatling -s config.testSim
 ```
 ##### 3. modifying a query preempted by an auth-request
 ```
@@ -66,5 +66,5 @@ docker run -it --rm mvngatimage java \
 -Dtarget=custom \
 -Dthreads=500
 
--cp target/performance-tests-1.0-SNAPSHOT.jar io.gatling.app.Gatling -s config.testSim
+-cp target/string-tests-1.0-SNAPSHOT.jar io.gatling.app.Gatling -s config.testSim
 ```
